@@ -8,13 +8,13 @@ public class Principal {
 
 		Scanner teclado = new Scanner(System.in);
 		
-		double[] notas = new double[5]; //int vetor[5];
+		double[] notas = new double[5]; 
 		double soma = 0;
 		
 		for (int i = 0; i < notas.length; i++) {
 			System.out.print("Digite a nota do aluno " + (i + 1) + ": ");
             notas[i] = teclado.nextDouble();
-            soma += notas[i]; // somando as notas para calcular a média depois
+            soma += notas[i];
 		}
 		
 		teclado.close();
