@@ -1,7 +1,7 @@
 package projeto;
 
-public class Computador {
+public class Pessoa {
 	public String nome;
-  public int idade; 
-  public String genero;;
+  	public int idade; 
+  	public String genero;;
 }
