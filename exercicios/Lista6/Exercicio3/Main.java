@@ -43,12 +43,19 @@ public class Main {
         System.out.println("\nPessoa 1:");
         System.out.println("Nome: " + p1.nome);
         System.out.println("Email: " + p1.retornaEmail());
-        System.out.println("Admin: " + (p1.admin ? "Sim" : "Não"));
 
         System.out.println("\nPessoa 2:");
         System.out.println("Nome: " + p2.nome);
         System.out.println("Email: " + p2.retornaEmail());
-        System.out.println("Admin: " + (p2.admin ? "Sim" : "Não"));
+
+        System.out.println("Quem será admin? (1 ou 2)");
+        int opcao = teclado.nextInt();
+
+            if (opcao == 1) {
+                p1.promoverAdmin();
+            } else {
+                p2.promoverAdmin();
+            }
 
         teclado.close();
     }
