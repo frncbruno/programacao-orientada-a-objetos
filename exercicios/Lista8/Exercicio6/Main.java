@@ -9,7 +9,7 @@ public class Main {
         c.acelerar(50); 
         c.acelerar(100); 
 
-        if (meuarro.atingiuVelocidadeMaxima()) {
+        if (c.atingiuVelocidadeMaxima()) {
             System.out.println("Atenção: Você está no limite do motor!");
         }
 
