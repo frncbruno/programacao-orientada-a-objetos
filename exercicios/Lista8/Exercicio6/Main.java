@@ -2,19 +2,19 @@ package pkg;
 
 public class Main {
     public static void main(String[] args) {
-        Carro meuCarro = new Carro("Fusca Turbo", 20, 120);
+        Carro c = new Carro("Fusca Turbo", 20, 120);
 
-        System.out.println("Carro: " + meuCarro.modelo);
+        System.out.println("Carro: " + c.modelo);
 
-        meuCarro.acelerar(50); 
-        meuCarro.acelerar(100); 
+        c.acelerar(50); 
+        c.acelerar(100); 
 
-        if (meuCarro.atingiuVelocidadeMaxima()) {
+        if (meuarro.atingiuVelocidadeMaxima()) {
             System.out.println("Atenção: Você está no limite do motor!");
         }
 
-        meuCarro.calcularTempoViagem(240); 
+        c.calcularTempoViagem(240); 
 
-        meuCarro.frear(150); /
+        c.frear(150); /
     }
 }
