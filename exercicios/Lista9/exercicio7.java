@@ -1,27 +1,26 @@
 public class Carro {
-
-    // Atributos
+    // - = private, só a própria classe acessa
+    // + = public, qualquer classe pode acessar
+    // # = protected
+    // ~ = default, package-private
+    
     private String placa;
     private int numChassi;
-
-    // Construtor
+    
     public Carro(String placa, int numChassi) {
         this.placa = placa;
         this.numChassi = numChassi;
     }
 
-    // Método acelerar
     public void acelerar() {
         System.out.println("O carro está acelerando...");
     }
 
-    // Método frear
     public boolean frear() {
         System.out.println("O carro está freando...");
         return true;
     }
 
-    // Getters e Setters (opcional, mas comum)
     public String getPlaca() {
         return placa;
     }
