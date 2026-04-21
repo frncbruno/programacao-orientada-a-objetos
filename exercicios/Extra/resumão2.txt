@@ -1,0 +1,76 @@
+# 🧠 Resumo Final – Programação Orientada a Objetos (Java)
+
+## 📌 Conceitos Básicos
+- Java é uma linguagem orientada a objetos baseada em classes e objetos
+- Classe → molde que define atributos e métodos
+- Objeto → instância de uma classe
+- Atributos → representam o estado (variáveis)
+- Métodos → representam o comportamento (funções)
+- Uma classe pode gerar vários objetos
+
+## 🔀 Estruturas de Decisão
+- `if`, `else if`, `else` → controle de fluxo
+- Operadores lógicos:
+  - `&&` → E
+  - `||` → OU
+  - `!` → NÃO
+
+## ⌨️ Entrada de Dados (Scanner)
+- `nextInt()` → inteiro  
+- `nextDouble()` → decimal  
+- `next()` → uma palavra  
+- `nextLine()` → linha inteira  
+
+## 🔁 Laços de Repetição
+- `for` → quando sabemos quantas vezes repetir  
+- `while` → executa enquanto a condição for verdadeira  
+- `do...while` → executa pelo menos uma vez  
+
+
+## 🔧 Métodos
+- Podem ter ou não retorno
+- Se tiver retorno → precisa de tipo (`int`, `double`, etc.)
+- Usa `return` para devolver valor
+- Podem receber parâmetros
+
+## 🏗️ Construtores
+- Método especial para criar objetos
+- Mesmo nome da classe
+- Não possui tipo de retorno
+
+## 🔒 Encapsulamento
+- Protege os dados da classe
+- Modificadores de acesso:
+  - `public` → acesso livre
+  - `private` → acesso somente na classe
+  - `protected` → subclasses e mesmo pacote
+- Getters → obter valor (`getNome`)
+- Setters → alterar valor (`setNome`)
+
+## ⚠️ Tratamento de Exceções
+- Exceção → erro em tempo de execução
+- Estrutura:
+```java
+try {
+    // código que pode dar erro
+} catch (Exception e) {
+    // tratamento do erro
+}
+
+Exemplos:
+
+Divisão por zero → ArithmeticException
+Índice inválido → ArrayIndexOutOfBoundsException
+Conversão inválida → NumberFormatException
+
+Classe → molde
+Objeto → instância
+Atributo → variável
+Método → ação
+Construtor → cria objeto
+Encapsulamento → protege dados
+get/set → acessar/modificar
+for → repetição definida
+while → repetição por condição
+do...while → executa ao menos uma vez
+try/catch → trata erros
