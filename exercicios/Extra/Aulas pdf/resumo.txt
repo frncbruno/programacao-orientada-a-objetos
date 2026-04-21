@@ -1,0 +1,45 @@
+Classe: representa um conjunto de objetos
+• Subclasse: classe filha que herda os atributos e os métodos da classe mãe 
+(Herança)
+• Objeto: instância de uma classe
+• Atributo: características do objeto
+• Método: funcionalidades do objeto
+
+ Mensagem: troca de informação entre os objetos
+• Associação: utilização de recursos entre objetos
+• Abstração: classe não instanciável
+• Polimorfismo: métodos com muitas formas: sobrecarga, sobrescrita
+
+1) Explique os seguintes conceitos de POO em Java:
+
+a) Classe
+- É um molde ou modelo que define a estrutura e o comportamento de um tipo de objeto, podendo descrever quais dados um objeto terá e o que ele poderá fazer.
+
+b) Objeto
+- É uma instância concreta dessa classe, criado a partir dela com valores próprios.
+
+c) Atributo
+- Variáveis definidas dentro da classe que representam as características do objeto, como nome, idade ou saldo.
+
+d) Método
+- Blocos de código que definem os comportamentos do objeto, ou seja, as ações que ele pode executar. 
+
+e) Encapsulamento
+-  Protege os dados internos de uma classe, tornando os atributos privados e expondo-os apenas através de métodos controlados (getters e setters), garantindo maior segurança e organização do código.
+
+2) Qual a diferença entre método e construtor em uma classe? Dê um exemplo.
+- Um construtor é um tipo especial de método chamado automaticamente no momento em que o objeto é criado com new. Ele tem o mesmo nome da classe e não possui tipo de retorno. Um método comum, por sua vez, é chamado manualmente após a criação do objeto e pode ter qualquer nome e tipo de retorno. Por exemplo, em uma classe Pessoa, o construtor Pessoa(String nome) inicializa o atributo nome no momento da criação, enquanto um método como apresentar() pode ser chamado depois para exibir esse nome.
+
+3) O que são modificadores de acesso em Java? Cite e explique brevemente os principais.
+- Os modificadores de acesso controlam a visibilidade de classes, atributos e métodos. O public permite acesso de qualquer lugar do programa. O private restringe o acesso apenas à própria classe, sendo o mais usado para proteger atributos. O protected permite acesso dentro do mesmo pacote e em subclasses. Quando nenhum modificador é declarado (default), o acesso é permitido apenas dentro do mesmo pacote.
+
+4) Qual a diferença entre os tipos de dados String, int e boolean? Dê um exemplo de uso de cada um.
+- int armazena números inteiros, como int idade = 20. 
+- String armazena cadeias de texto, como String nome = "Bruno". 
+- boolean armazena apenas dois valores possíveis: verdadeiro ou falso, como boolean aprovado = true. 
+
+5) Explique o que é e para que serve o método toString() em uma classe.
+- O toString() é um método herdado da classe Object que define como um objeto será representado como texto. Por padrão, ele retorna um endereço de memória pouco legível, mas ao sobrescrevê-lo na classe é possível retornar uma descrição significativa do objeto. Ele é chamado automaticamente, por exemplo, quando se usa System.out.println(objeto), tornando a leitura e o debug muito mais práticos.
+
+6) Descreva o que acontece quando se tenta acessar um atributo privado diretamente fora da classe. Como é possível acessá-lo de forma correta?
+- Quando se tenta acessar um atributo private diretamente de fora da classe, o Java gera um erro de compilação, pois esse acesso viola o encapsulamento. A forma correta de ler ou modificar esse atributo é através de métodos públicos definidos na própria classe: um getter (getNome()) para leitura e um setter (setNome(String nome)) para alteração, permitindo que a classe controle como seus dados internos são acessados e modificados.
