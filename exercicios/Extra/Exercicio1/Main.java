@@ -1,87 +1,119 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-
-        // TESTE FUNCIONÁRIOS
-        Funcionario f1 = new FuncionarioCLT("João", 2000);
-        Funcionario f2 = new FuncionarioPJ("Maria", 3000);
-
-        f1.exibirDados();
-        System.out.println("Salário Final: " + f1.calcularSalarioFinal());
-
-        f2.exibirDados();
-        System.out.println("Salário Final: " + f2.calcularSalarioFinal());
-
-        // TESTE DISPOSITIVOS
-        Televisao tv = new Televisao();
-        Lampada lamp = new Lampada();
-
-        tv.ligar();
-        tv.desligar();
-
-        lamp.ligar();
-        lamp.desligar();
-
-        // MENU PRODUTO
         Scanner sc = new Scanner(System.in);
         Produto produto = null;
+        int opcao;
 
-        int opcao = -1;
-
-        while (opcao != 0) {
+        do {
             System.out.println("\nMENU");
-            System.out.println("1 - Criar produto (nome)");
-            System.out.println("2 - Criar produto (nome e preço)");
-            System.out.println("3 - Exibir informações");
-            System.out.println("4 - Set nome");
-            System.out.println("5 - Get nome");
-            System.out.println("6 - Set preço");
-            System.out.println("7 - Get preço");
-            System.out.println("8 - Set estoque");
-            System.out.println("9 - Get estoque");
+            System.out.println("1 - Criar produto informando nome");
+            System.out.println("2 - Criar produto informando nome e preco");
+            System.out.println("3 - Exibir informacoes do produto");
+            System.out.println("4 - Atribuir nome do produto");
+            System.out.println("5 - Obter nome do produto");
+            System.out.println("6 - Atribuir preco do produto");
+            System.out.println("7 - Obter preco do produto");
+            System.out.println("8 - Atribuir quantidade em estoque");
+            System.out.println("9 - Obter quantidade em estoque");
             System.out.println("0 - Sair");
-
+            System.out.print("Opcao: ");
             opcao = sc.nextInt();
-            sc.nextLine();
+            sc.nextLine(); // limpa o buffer
 
-            if (opcao == 1) {
-                System.out.print("Nome: ");
-                String nome = sc.nextLine();
-                produto = new Produto(nome);
-            } 
-            else if (opcao == 2) {
-                System.out.print("Nome: ");
-                String nome = sc.nextLine();
-                System.out.print("Preço: ");
-                double preco = sc.nextDouble();
-                produto = new Produto(nome, preco);
-            } 
-            else if (opcao == 3) {
-                if (produto != null) produto.exibirInformacoes();
-            } 
-            else if (opcao == 4) {
-                System.out.print("Novo nome: ");
-                produto.setNome(sc.nextLine());
-            } 
-            else if (opcao == 5) {
-                System.out.println(produto.getNome());
-            } 
-            else if (opcao == 6) {
-                System.out.print("Novo preço: ");
-                produto.setPreco(sc.nextDouble());
-            } 
-            else if (opcao == 7) {
-                System.out.println(produto.getPreco());
-            } 
-            else if (opcao == 8) {
-                System.out.print("Quantidade: ");
-                produto.setQuantidadeEstoque(sc.nextInt());
-            } 
-            else if (opcao == 9) {
-                System.out.println(produto.getQuantidadeEstoque());
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o nome: ");
+                    String nome1 = sc.nextLine();
+                    produto = new Produto(nome1);
+                    System.out.println("Produto criado!");
+                    break;
+
+                case 2:
+                    System.out.print("Digite o nome: ");
+                    String nome2 = sc.nextLine();
+                    System.out.print("Digite o preco: ");
+                    double preco2 = sc.nextDouble();
+                    sc.nextLine();
+                    produto = new Produto(nome2, preco2);
+                    System.out.println("Produto criado!");
+                    break;
+
+                case 3:
+                    if (produto == null) {
+                        System.out.println("Nenhum produto criado ainda.");
+                    } else {
+                        produto.exibirInformacoes();
+                    }
+                    break;
+
+                case 4:
+                    if (produto == null) {
+                        System.out.println("Nenhum produto criado ainda.");
+                    } else {
+                        System.out.print("Novo nome: ");
+                        String novoNome = sc.nextLine();
+                        produto.setNome(novoNome);
+                    }
+                    break;
+
+                case 5:
+                    if (produto == null) {
+                        System.out.println("Nenhum produto criado ainda.");
+                    } else {
+                        System.out.println("Nome: " + produto.getNome());
+                    }
+                    break;
+
+                case 6:
+                    if (produto == null) {
+                        System.out.println("Nenhum produto criado ainda.");
+                    } else {
+                        System.out.print("Novo preco: ");
+                        double novoPreco = sc.nextDouble();
+                        sc.nextLine();
+                        produto.setPreco(novoPreco);
+                    }
+                    break;
+
+                case 7:
+                    if (produto == null) {
+                        System.out.println("Nenhum produto criado ainda.");
+                    } else {
+                        System.out.println("Preco: " + produto.getPreco());
+                    }
+                    break;
+
+                case 8:
+                    if (produto == null) {
+                        System.out.println("Nenhum produto criado ainda.");
+                    } else {
+                        System.out.print("Nova quantidade: ");
+                        int novaQtd = sc.nextInt();
+                        sc.nextLine();
+                        produto.setQuantidadeEstoque(novaQtd);
+                    }
+                    break;
+
+                case 9:
+                    if (produto == null) {
+                        System.out.println("Nenhum produto criado ainda.");
+                    } else {
+                        System.out.println("Estoque: " + produto.getQuantidadeEstoque());
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+
+                default:
+                    System.out.println("Opcao invalida.");
             }
-        }
+
+        } while (opcao != 0);
 
         sc.close();
     }
