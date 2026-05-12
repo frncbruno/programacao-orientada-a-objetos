@@ -5,5 +5,9 @@ public class Principal {
 
         System.out.println("Produto 1: " + p.getNome() + " - R$ " + p.getPreco());
         System.out.println("Produto 2: " + p2.getNome() + " - R$ " + p2.getPreco());
+
+        p2.setPreco(2.33);
+        System.out.println("Produto 1: " + p.getNome() + " - R$ " + p.getPreco());
+        System.out.println("Produto 2: " + p2.getNome() + " - R$ " + p2.getPreco());
     }
 }
