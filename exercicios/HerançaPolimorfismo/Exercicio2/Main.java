@@ -1,86 +1,94 @@
-package exercicio;
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
+		Scanner teclado = new Scanner(System.in);
 
-		Produto[] produtos = new Produto[5];
+		ArrayList<Produto> produtos = new ArrayList<>();
 
 		int opcao;
 
-		for (int i = 0; i < produtos.length; i++) {
+		for (int i = 0; i < 5; i++) {
 
 			System.out.println("1 - Produto Eletronico");
 			System.out.println("2 - Produto Alimenticio");
 
-			opcao = sc.nextInt();
-			sc.nextLine();
+			opcao = teclado.nextInt();
+			teclado.nextLine();
 
 			System.out.println("Nome:");
-			String nome = sc.nextLine();
+			String nome = teclado.nextLine();
 
 			System.out.println("Preco:");
-			double preco = sc.nextDouble();
+			double preco = teclado.nextDouble();
 
 			System.out.println("Percentual de desconto:");
-			double desconto = sc.nextDouble();
+			double desconto = teclado.nextDouble();
 
-			if (opcao == 1) {
+			switch(opcao) {
 
-				System.out.println("Garantia:");
-				int garantia = sc.nextInt();
+				case 1:
 
-				produtos[i] = new ProdutoEletronico(
-						nome,
-						preco,
-						desconto,
-						garantia);
-			}
+					System.out.println("Garantia (anos):");
+					int garantia = teclado.nextInt();
 
-			if (opcao == 2) {
+					produtos.add(
+							new ProdutoEletronico(
+									nome,
+									preco,
+									desconto,
+									garantia));
 
-				System.out.println("Validade:");
-				int validade = sc.nextInt();
+					break;
 
-				produtos[i] = new ProdutoAlimenticio(
-						nome,
-						preco,
-						desconto,
-						validade);
+				case 2:
+
+					System.out.println("Validade (anos):");
+					int validade = teclado.nextInt();
+
+					produtos.add(
+							new ProdutoAlimenticio(
+									nome,
+									preco,
+									desconto,
+									validade));
+
+					break;
+
+				default:
+
+					System.out.println("Opcao invalida");
 			}
 		}
 
 		System.out.println("\nLISTA DE PRODUTOS\n");
 
-		for (int i = 0; i < produtos.length; i++) {
+		for (int i = 0; i < produtos.size(); i++) {
 
 			System.out.println("Nome: "
-					+ produtos[i].getNome());
+					+ produtos.get(i).getNome());
 
 			System.out.println("Preco Original: "
-					+ produtos[i].getPreco());
+					+ produtos.get(i).getPreco());
 
-			System.out.println("Aplicar Desconto: "
-					+ produtos[i].aplicarDesconto());
+			System.out.println("Preco com Desconto: "
+					+ produtos.get(i).aplicarDesconto());
 
 			System.out.println("Preco Final: "
-					+ produtos[i].calcularPrecoFinal());
+					+ produtos.get(i).calcularPrecoFinal());
 
 			System.out.println("---------------------");
 		}
 
-		sc.close();
+		teclado.close();
 	}
 
 }
 
 ----------
-
-package exercicio;
 
 public class Produto {
 	
@@ -131,8 +139,6 @@ public class Produto {
 
 --------------
 
-package exercicio;
-
 public class ProdutoAlimenticio extends Produto{
 	
 	public int validade;
@@ -164,8 +170,6 @@ public class ProdutoAlimenticio extends Produto{
 }
 
 -----------------
-
-  package exercicio;
 
 public class ProdutoEletronico extends Produto {
 
