@@ -1,0 +1,4 @@
+Todas as ações/comportamentos puros que não precisam carregar variáveis ou atributos fixos podem virar interfaces. Nos exercícios anteriores, poderíamos transformar em interface:
+EmitirSom (Exercício 4) - Poderia ser uma interface EmissorSom.Acelerar
+Frear (Exercício 6) - Poderiam ser uma interface Controlavel.
+EfetuarCompra (Exercício 7) - Poderia ser uma interface Comprador.
