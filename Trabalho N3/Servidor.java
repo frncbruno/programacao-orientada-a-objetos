@@ -8,27 +8,21 @@ public class Servidor {
 
     public static void main(String[] args) {
         try {
-            // Criacao do socket servidor e definicao da porta (1234)
+            // em porta seria a porta do IP, 1234, por exemplo
             ServerSocket servidor = new ServerSocket(1234);
             System.out.println("Servidor iniciado. Aguardando conexoes...");
 
             while (true) {
-                /* Servidor aguarda uma conexao de um cliente
-                   O servidor bloqueia nesta linha enquanto um cliente nao chega
-                   Quando um cliente se conecta, o servidor recebe uma referencia do
-                   socket do cliente que se conectou (retorno do metodo) */
                 Socket cliente = servidor.accept();
                 System.out.println("Cliente conectado!");
 
-                // Extraio o fluxo de saida e entrada de objetos do socket
                 ObjectOutputStream out = new ObjectOutputStream(cliente.getOutputStream());
                 ObjectInputStream in = new ObjectInputStream(cliente.getInputStream());
 
-                // Servidor recebe 1 objeto do tipo Veiculo do cliente
                 Veiculo veiculo = (Veiculo) in.readObject();
                 System.out.println("Veiculo recebido: " + veiculo);
 
-                // Servidor tenta cadastrar o veiculo no arquivo
+                // cadastro do veiculo no arquvivo
                 String resposta;
                 try {
                     ArquivoVeiculo arquivo = new ArquivoVeiculo("veiculos");
@@ -42,7 +36,7 @@ public class Servidor {
                     System.out.println("Erro ao cadastrar: " + e.getMessage());
                 }
 
-                // Servidor envia a resposta para o cliente
+                // envia a resposta pro cliente
                 out.writeObject(resposta);
 
                 cliente.close();
