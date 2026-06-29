@@ -1,0 +1,13 @@
+EXERCÍCIO 2 — Arquivos
+Enunciado
+
+Faça um programa que cadastre três livros.
+
+Cada livro possui:
+
+nome
+autor
+
+Grave essas informações em um arquivo chamado livros.txt.
+
+Depois leia o arquivo e mostre os livros na tela.
