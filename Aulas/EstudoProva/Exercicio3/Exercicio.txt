@@ -1,0 +1,13 @@
+EXERCÍCIO 3 — Serialização
+Enunciado
+
+Uma escola deseja salvar um aluno em um arquivo.
+
+Crie uma classe Aluno contendo:
+
+nome
+idade
+
+Implemente a serialização do objeto para um arquivo chamado aluno.ser.
+
+Depois leia esse arquivo e mostre o objeto na tela.
