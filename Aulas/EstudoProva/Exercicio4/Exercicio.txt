@@ -1,0 +1,28 @@
+ENUNCIADO
+
+Uma loja deseja controlar seus produtos.
+
+Crie uma classe abstrata chamada Produto contendo:
+
+código
+nome
+preço
+estoque
+
+A classe deve possuir os métodos abstratos:
+
+comprar()
+vender()
+
+Crie uma classe ProdutoLoja que implemente esses métodos.
+
+Regras:
+
+Caso o preço seja menor ou igual a zero, lançar uma exceção personalizada.
+Caso tente vender mais do que existe em estoque, lançar uma exceção personalizada.
+
+Depois de realizar uma venda corretamente:
+
+Grave as informações em um arquivo texto chamado vendas.txt.
+Serialize o objeto em um arquivo chamado produto.ser.
+Leia novamente o objeto serializado e mostre seus dados na tela.
