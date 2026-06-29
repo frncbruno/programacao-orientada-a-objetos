@@ -1,0 +1,15 @@
+EXERCÍCIO 1 — Exceções Personalizadas
+Enunciado
+
+Uma locadora de filmes deseja controlar o aluguel de DVDs.
+
+Crie uma classe chamada Filme contendo:
+
+titulo
+quantidadeDisponivel
+
+Implemente um método chamado alugar(int quantidade).
+
+Caso o usuário tente alugar uma quantidade maior do que existe em estoque, deverá ser lançada uma exceção personalizada chamada EstoqueInsuficienteException.
+
+Na classe Principal utilize try/catch para tratar o erro.
